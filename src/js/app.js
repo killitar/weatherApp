@@ -535,7 +535,6 @@ export const updateWeather = function (lat, lon) {
 				`;
 
         for (let i = 7, len = forecastList.length; i < len; i += 8) {
-          console.log('df');
           const {
             main: { temp_max },
             weather,
