@@ -12,6 +12,8 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <script src="./js/app.js" type="module"></script>
     <script src="./js/route.js" type="module"></script>
@@ -21,7 +23,7 @@
       <div class="container flex items-center justify-between">
         <div class="search-city">
           <div
-            class="search-city-wrapper p-4 flex justify-center items-center bg-darkerblack w-80 h-12 rounded-3xl shadow-lg"
+            class="search-city-wrapper p-4 flex justify-center items-center bg-darkerblack w-40 h-12 rounded-3xl shadow-lg md:w-80"
           >
             <svg
               width="24px"
@@ -65,7 +67,7 @@
           <span class=""> </span>
 
           <div
-            class="search-result bg-darkerblack rounded-b-3xl shadow-lg absolute w-80 z-10 transition duration-150 ease-in-out hidden"
+            class="search-result bg-darkerblack rounded-b-3xl shadow-lg absolute w-40 z-10 transition duration-150 ease-in-out hidden md:w-80"
           >
             <hr class="" />
           </div>
@@ -73,7 +75,7 @@
 
         <div class="current-location">
           <div
-            class="current-location-wrapper flex justify-center items-center bg-purple-600 w-42 h-12 p-4 rounded-full cursor-pointer shadow-lg"
+            class="current-location-wrapper flex justify-center items-center bg-purple-600 w-42 h-12 p-4 rounded-full cursor-pointer shadow-lg hover:bg-purple-700"
           >
             <a href="" class="current-location-btn flex items-center">
               <div class="">
@@ -132,7 +134,9 @@
                   </g>
                 </svg>
               </div>
-              <p class="font-semibold text-base text-darkerblack ml-2">
+              <p
+                class="font-semibold text-base text-darkerblack ml-2 hidden sm:block"
+              >
                 Текущая геопозиция
               </p>
             </a>
@@ -142,19 +146,46 @@
     </header>
 
     <main class="">
-      <div class="container flex">
-        <div class="content-left mr-4">
+      <div class="container flex flex-col lg:flex-row">
+        <div class="content-left lg:mr-10">
           <section
-            class="section current-weather current-weather-card h-60 mb-8"
+            class="section current-weather current-weather-card mb-8 lg:w-64"
           ></section>
 
-          <section class="section section-forecast"></section>
-          <div class="section-hourly-forecast mt-2"></div>
+          <section class="section section-forecast mb-8"></section>
+          <div class="section-hourly-forecast mb-8 md:mb-8 lg:mb-0"></div>
         </div>
         <div class="content-right">
           <section
-            class="section-highlights bg-darkerblack rounded-2xl shadow-xl"
+            class="section-highlights bg-darkerblack rounded-2xl shadow-xl mb-8"
           ></section>
+          <section class="donation bg-darkerblack rounded-2xl shadow-xl">
+            <div class="px-8 pt-8">
+              <div class="mb-8 flex items-center">
+                <h1 class="text-white text-2xl mr-2">Созданно:</h1>
+                <p class="text-graysoft text-xl">Александр,</p>
+                <p class="text-graysoft text-xl">Мирослав</p>
+              </div>
+              <img src="./icons/heart.png" alt="" class="w-12 h-12" />
+              <p class="text-white text-2xl mb-6">
+                Пожертвовать средства на шавуху:
+              </p>
+              <div class="flex flex-col">
+                <a href="" class="text-graysoft text-xl mb-2">BTC</a>
+                <a href="" class="text-graysoft text-xl">Etherium</a>
+              </div>
+              <div
+                class="flex items-center text-white text-lg justify-center mt-10"
+              >
+                Powered by:
+                <img
+                  src="./icons/openweather-seeklogo.com.svg"
+                  alt=""
+                  class="w-20 h-20"
+                />
+              </div>
+            </div>
+          </section>
         </div>
       </div>
       <div class="spin-loading flex justify-center mt-32 hidden">

@@ -287,11 +287,11 @@ export const updateWeather = function (lat, lon) {
 
       card.innerHTML = `
 			  <h2 class="text-white text-xl">Сегодня</h2>
-							<div class="highlight-list flex flex-col">
+							<div class="highlight-list lg:flex lg:flex-wrap">
 								<div
-									class="hightlight-card one mr-4 mt-5 bg-darker p-5 rounded-xl h-40"
+									class="hightlight-card one mt-5 bg-darker p-5 rounded-xl lg:w-full"
 								>
-									<h3 class="card-title text-graysoft text-xl mb-10">
+									<h3 class="card-title text-graysoft text-xl mb-10 ">
 										Качество воздуха
 									</h3>
 									<div class="wrapper flex">
@@ -301,7 +301,7 @@ export const updateWeather = function (lat, lon) {
 												src="./icons/weathers-icons/wind.png"
 												alt=""
 										/></span>
-										<ul class="card-list flex">
+										<ul class="card-list grid grid-cols-2 gap-2 md:flex lg:flex lg:w-full ">
 											<li class="card-item mr-6">
 												<p class="text-graysoft font-normal text-xs">
 													PM <sub>2.5</sub>
@@ -330,13 +330,13 @@ export const updateWeather = function (lat, lon) {
 									</div>
 								</div>
 								<div
-									class="hightlight-card one mr-4 mt-5 bg-darker p-5 rounded-xl h-40"
+									class="hightlight-card mt-5 bg-darker p-5 rounded-xl lg:w-full"
 								>
 									<h3 class="card-title text-graysoft text-xl mb-10">
 										Восход, Закат
 									</h3>
-									<div class="cark-list flex">
-										<div class="card-item flex items-center mr-4">
+									<div class="cark-list flex flex-col md:flex-row md:justify-between ">
+										<div class="card-item flex items-center mb-8 md:mb-0 md:mr-12">
 											<span
 												><img
 													class="h-12 w-12 mr-3"
@@ -352,7 +352,7 @@ export const updateWeather = function (lat, lon) {
 											</div>
 										</div>
 
-										<div class="card-item flex items-center mr-4">
+										<div class="card-item flex items-center">
 											<span
 												><img
 													class="h-12 w-12 mr-3"
@@ -369,8 +369,9 @@ export const updateWeather = function (lat, lon) {
 										</div>
 									</div>
 								</div>
-								<div
-									class="hightlight-card mr-4 mt-5 bg-darker p-5 rounded-xl h-40"
+							<div class="sm:flex lg:grid lg:grid-cols-2 lg:gap-2 lg:w-full">
+							<div
+									class="hightlight-card mt-5 bg-darker p-5 rounded-xl h-40"
 								>
 									<h3 class="card-title text-graysoft text-xl mb-10">
 										Влажность
@@ -391,7 +392,7 @@ export const updateWeather = function (lat, lon) {
 									</div>
 								</div>
 								<div
-									class="hightlight-card mr-4 mt-4 bg-darker p-5 rounded-xl h-40"
+									class="hightlight-card mt-4 bg-darker p-5 rounded-xl h-40"
 								>
 									<h3 class="card-title text-graysoft text-xl mb-10">
 										Давление
@@ -412,7 +413,7 @@ export const updateWeather = function (lat, lon) {
 									</div>
 								</div>
 								<div
-									class="hightlight-card mr-4 mt-5 bg-darker p-5 rounded-xl h-40"
+									class="hightlight-card mt-5 bg-darker p-5 rounded-xl h-40"
 								>
 									<h3 class="card-title text-graysoft text-xl mb-10">
 										Видимость
@@ -433,7 +434,7 @@ export const updateWeather = function (lat, lon) {
 									</div>
 								</div>
 								<div
-									class="hightlight-card mr-4 mt-5 bg-darker p-5 rounded-xl h-40"
+									class="hightlight-card mt-5 bg-darker p-5 rounded-xl h-40"
 								>
 									<h3 class="card-title text-graysoft text-xl mb-10">
 										Чувствуется как
@@ -444,7 +445,7 @@ export const updateWeather = function (lat, lon) {
 											<span
 												><img
 													class="h-12 w-12 mr-3"
-													src="./icons/weathers-icons/warm.png"
+													src="./icons/weathers-icons/temperature.png"
 													alt=""
 											/></span>
 											<p class="text-white font-normal text-3xl">${parseInt(feels_like)}&deg;</p>
@@ -452,7 +453,9 @@ export const updateWeather = function (lat, lon) {
 									</div>
 								</div>
 							</div>
-			`;
+
+							</div>
+									`;
 
       highlightSection.appendChild(card);
 
@@ -522,7 +525,7 @@ export const updateWeather = function (lat, lon) {
 				<h2 class="text-white text-xl mb-2">Прогноз на 5 дней</h2>
 
 						<div
-							class="forecast-card p-6 bg-darkerblack rounded-2xl shadow-xl w-72"
+							class="forecast-card p-6 bg-darkerblack rounded-2xl shadow-xl"
 						>
 							<ul class="forecast-list my-5">
 								
