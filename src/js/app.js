@@ -369,7 +369,7 @@ export const updateWeather = function (lat, lon) {
 										</div>
 									</div>
 								</div>
-							<div class="sm:flex lg:grid lg:grid-cols-2 lg:gap-2 lg:w-full">
+							<div class="lg:grid lg:grid-cols-2 lg:gap-2 lg:w-full">
 							<div
 									class="hightlight-card mt-5 bg-darker p-5 rounded-xl h-40"
 								>
@@ -392,7 +392,7 @@ export const updateWeather = function (lat, lon) {
 									</div>
 								</div>
 								<div
-									class="hightlight-card mt-4 bg-darker p-5 rounded-xl h-40"
+									class="hightlight-card mt-5 bg-darker p-5 rounded-xl h-40"
 								>
 									<h3 class="card-title text-graysoft text-xl mb-10">
 										Давление
